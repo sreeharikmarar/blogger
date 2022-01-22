@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop-airbnb'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'pry'
 end
 
 group :development do

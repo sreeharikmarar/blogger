@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: %i[create]
-      # post 'login', to: 'authentication#create'
-      # post 'register', to: 'users#create'
+      post '/auth/user', to: 'authentication#authenticate'
     end
   end
 end
