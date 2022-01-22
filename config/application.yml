@@ -1,0 +1,7 @@
+#database configuration
+RAILS_ENV: "development"
+DB_HOST: "localhost"
+DATABASE: "blogger_development"
+DB_USER: "postgres"
+DB_PASSWORD: ""
+POOL: "5"
