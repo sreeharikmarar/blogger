@@ -10,8 +10,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(response).to have_http_status(:created)
       expect(JSON.parse(response.body)).to eq({
                                                 'name' => 'user1',
-                                                'email' => 'user1@test.com',
-                                                'token' => JsonWebToken.encode(user_id: User.last.id)
+                                                'email' => 'user1@test.com'
                                               })
     end
   end

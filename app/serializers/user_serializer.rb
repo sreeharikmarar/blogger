@@ -8,8 +8,7 @@ class UserSerializer
   def as_json
     {
       name: @user.name,
-      email: @user.email,
-      token: ::JsonWebToken.encode(user_id: @user.id)
+      email: @user.email
     }
   end
 end

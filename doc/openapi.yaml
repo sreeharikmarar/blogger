@@ -1,0 +1,47 @@
+---
+openapi: 3.0.3
+info:
+  title: blogger
+  version: 1.0.0
+servers: []
+paths:
+  "/api/v1/users":
+    post:
+      summary: create
+      tags:
+      - Api::V1::User
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+            example:
+              user:
+                name: user1
+                email: user1@test.com
+                password: password
+      responses:
+        '201':
+          description: creates a new user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  email:
+                    type: string
+              example:
+                name: user1
+                email: user1@test.com
