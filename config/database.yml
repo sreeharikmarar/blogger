@@ -83,6 +83,5 @@ test:
 #
 production:
   <<: *default
-  database: blogger_production
-  username: blogger
-  password: <%= ENV['BLOGGER_DATABASE_PASSWORD'] %>
+  database: <%= Figaro.env.DB_NAME%>
+  
