@@ -101,3 +101,67 @@ paths:
                     type: string
               example:
                 error: Name is too short (minimum is 3 characters)
+  "/api/v1/posts":
+    post:
+      summary: create
+      tags:
+      - Api::V1::Post
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                post:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    content:
+                      type: string
+            example:
+              post:
+                title: Recusandae minima consequatur
+                content: Recusandae minima consequatur. Expedita sequi blanditiis.
+                  Ut fuga et
+      responses:
+        '201':
+          description: creates a new post when the request is valid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  content:
+                    type: string
+                  author:
+                    type: string
+              example:
+                title: Recusandae minima consequatur
+                content: Recusandae minima consequatur. Expedita sequi blanditiis.
+                  Ut fuga et
+                author: user1
+        '401':
+          description: fails when the token is not present
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Not Authorized
+        '422':
+          description: fails when the title is not present
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Title can't be blank
