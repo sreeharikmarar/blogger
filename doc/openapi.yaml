@@ -204,49 +204,31 @@ paths:
         required: true
         schema:
           type: integer
-        example: 40
+        example: 40ß
       - name: post_id
         in: path
         required: true
         schema:
           type: integer
-        example: 47
+        example: 84
       - name: post_id
         in: path
         required: true
         schema:
           type: integer
-        example: 54
+        example: 85
       - name: post_id
         in: path
         required: true
         schema:
           type: integer
-        example: 61
+        example: 92
       - name: post_id
         in: path
         required: true
         schema:
           type: integer
-        example: 68
-      - name: post_id
-        in: path
-        required: true
-        schema:
-          type: integer
-        example: 69
-      - name: post_id
-        in: path
-        required: true
-        schema:
-          type: integer
-        example: 76
-      - name: post_id
-        in: path
-        required: true
-        schema:
-          type: integer
-        example: 77
+        example: 93
       responses:
         '401':
           description: creates a new comment when the request is valid

@@ -5,8 +5,8 @@ RUN apt-get update -qq &&\
 WORKDIR /app
 ENV RAILS_ENV=production
 
-#Copies both Gemfile and Gemfile.lock
-COPY Gemfile* $APP_HOME/
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 COPY config/application.yml.sample config/application.yml
 RUN bundle install
 COPY . /app
