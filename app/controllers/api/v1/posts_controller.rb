@@ -3,6 +3,13 @@
 module Api
   module V1
     class PostsController < ApplicationController
+      skip_before_action :authenticate_request, except: :create
+
+      def index
+        posts = Post.order(created_at: :desc).limit(10)
+        results = posts.map { |post| PostSerializer.new(post).as_json }
+        render json: { posts: results }.as_json, status: :ok
+      end
 
       def create
         post = Post.create(post_params)

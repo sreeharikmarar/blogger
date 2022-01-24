@@ -165,3 +165,29 @@ paths:
                     type: string
               example:
                 error: Title can't be blank
+    get:
+      summary: index
+      tags:
+      - Api::V1::Post
+      responses:
+        '200':
+          description: retrives first 10 posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      nullable: true
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        content:
+                          type: string
+                        author:
+                          type: string
+              example:
+                posts: []

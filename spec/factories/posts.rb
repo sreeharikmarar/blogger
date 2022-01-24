@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :post do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph }
-    user { create(:user).id }
+    user_id { create(:user).id }
   end
 end
