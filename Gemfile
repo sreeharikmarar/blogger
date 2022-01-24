@@ -37,11 +37,11 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
+  gem 'pry'
   gem 'rspec-openapi'
   gem 'rspec-rails'
   gem 'rubocop-airbnb'
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'pry'
 end
 
 group :development do
