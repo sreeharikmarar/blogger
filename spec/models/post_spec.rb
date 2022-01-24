@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
     }
 
     it { should validate_presence_of(:content) }
-    it { should validate_presence_of(:user) }
+    it { should belong_to(:user) }
 
     it 'does not create post when title is empty' do
       post = described_class.new(title: '',

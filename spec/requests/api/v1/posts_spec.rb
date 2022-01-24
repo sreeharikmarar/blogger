@@ -63,7 +63,7 @@ RSpec.describe 'Api::V1::Posts', type: :request do
   end
 
   describe 'GET /api/v1/posts' do
-    let!(:user) { create(:user, name: 'user1')} 
+    let!(:user) { create(:user, name: 'user1') }
     let!(:post_1) { create(:post, title: 'first commit', content: 'hello world! first post', user_id: user.id) }
 
     it 'retrives first 10 posts' do
@@ -77,8 +77,7 @@ RSpec.describe 'Api::V1::Posts', type: :request do
                                                     'content' => 'hello world! first post',
                                                     'title' => 'first commit'
                                                   }
-                                                ] 
-                                              })
+                                                ] })
     end
   end
 end
