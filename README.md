@@ -17,6 +17,7 @@ application up and running.
     ```
 
 * Configuration
+    
     * Make changes to application.yaml.sample and then run the following   
     
     ```
@@ -44,7 +45,9 @@ application up and running.
     ```
 
 * Build image
+    
     * Dockerfile is located at the root level
+    
     ```
     $: docker build -t blogger:latest . --platform linux/amd64
     ```
@@ -57,5 +60,12 @@ application up and running.
     ```
 
 * Deployment instructions
+    
+    * All k8s yaml spec can be found under kubernetes folder. 
 
-* 
+    ```
+    $: kubectl apply -f kubernetes/blogger_credentials.yaml
+    $: kubectl apply -f kubernetes/blogger_migration_job.yaml
+    $: kubectl apply -f kubernetes/blogger_deployment.yaml
+    $: kubectl apply -f kubernetes/blogger_service.yaml
+    ```
