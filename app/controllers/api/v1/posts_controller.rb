@@ -7,7 +7,7 @@ module Api
 
       def index
         posts = Post.order(created_at: :desc).limit(10)
-        results = posts.map { |post| PostSerializer.new(post).as_json }
+        results = posts.map { |post| PostIndexSerializer.new(post).as_json }
         render json: { posts: results }.as_json, status: :ok
       end
 

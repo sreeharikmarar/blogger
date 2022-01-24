@@ -189,5 +189,101 @@ paths:
                           type: string
                         author:
                           type: string
+                        id:
+                          type: integer
               example:
                 posts: []
+  "/api/v1/posts/{post_id}/comments":
+    post:
+      summary: create
+      tags:
+      - Api::V1::Comment
+      parameters:
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 40
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 47
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 54
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 61
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 68
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 69
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 76
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 77
+      responses:
+        '401':
+          description: creates a new comment when the request is valid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Not Authorized
+        '201':
+          description: creates a new comment when the request is valid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                  user:
+                    type: string
+              example:
+                description: Recusandae minima consequatur
+                user: user1
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+            example:
+              comment:
+                description: Recusandae minima consequatur

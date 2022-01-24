@@ -6,12 +6,12 @@ RSpec.describe 'Api::V1::Users', type: :request do
   describe 'POST /api/v1/users' do
     context 'valid request' do
       it 'creates a new user when the request is valid' do
-        post '/api/v1/users', params: { user: { name: 'user1', email: 'user1@test.com', password: 'password' } }
+        post '/api/v1/users', params: { user: { name: 'user1', email: 'user1@test1.com', password: 'password' } }
 
         expect(response).to have_http_status(:created)
         expect(JSON.parse(response.body)).to eq({
                                                   'name' => 'user1',
-                                                  'email' => 'user1@test.com'
+                                                  'email' => 'user1@test1.com'
                                                 })
       end
     end
@@ -36,7 +36,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       end
 
       it 'fails when the password is invalid' do
-        post '/api/v1/users', params: { user: { name: 'user1', email: 'user1@test.com', password: '' } }
+        post '/api/v1/users', params: { user: { name: 'user2', email: 'user2@test.com', password: '' } }
 
         expect(response).to have_http_status(:unprocessable_entity)
         expect(JSON.parse(response.body)).to eq({

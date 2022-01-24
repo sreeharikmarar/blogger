@@ -73,6 +73,7 @@ RSpec.describe 'Api::V1::Posts', type: :request do
       expect(JSON.parse(response.body)).to eq({ 'posts' =>
                                                 [
                                                   {
+                                                    'id' => post_1.id,
                                                     'author' => 'user1',
                                                     'content' => 'hello world! first post',
                                                     'title' => 'first commit'

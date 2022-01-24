@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/auth/user', to: 'authentication#authenticate'
       resources :users, only: [:create]
-      resources :posts, only: %i[create index]
+      resources :posts, param: :id, only: [:create, :index] do
+        resources :comments, only: [:create]
+      end
     end
   end
 end
