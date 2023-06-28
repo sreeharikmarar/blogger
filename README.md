@@ -43,6 +43,8 @@ application up and running.
     ```
     $: RAILS_ENV=test OPENAPI=1 bundle exec rspec
     ```
+* Generated OpenAPI Spec can be accessed from  
+  - [openapi.yaml](./doc/openapi.yaml)
 
 * Build image
     
